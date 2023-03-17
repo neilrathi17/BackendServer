@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js"
+import userRoutes from"./routes/users.js"
 import {register} from "./controllers/auth.js"
 
 // CONFIGURATIONS
@@ -27,7 +28,7 @@ app.use(cors());
 app.use('.assets',express.static(path.join(__dirname,'public/assets')));
 
 
-/*FILE STORAGAE*/
+/*FILE STORAGE*/
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
         cb(null,"public/assets");
@@ -45,6 +46,7 @@ app.post("/auth/register",upload.single("picture"),register);
 
 // ROUTES-----------------------
 app.use('/auth',authRoutes)
+app.use("/users",userRoutes);
 
 
 

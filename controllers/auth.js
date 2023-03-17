@@ -50,7 +50,7 @@ export const login= async(req,res)=>{
         if(!user) 
         return res.status(400).json({msg:"user does not exist"});
 
-        const isMatch = await bcrypt.compare(password,userPassowrd);
+        const ismatch = await bcrypt.compare(password,userPassowrd);
         if(!ismatch) return res.status(400).json({msg:"invalid creds"});
 
         const token =jwt.sign({id:user._id},process.env.JWT_SECRET)
