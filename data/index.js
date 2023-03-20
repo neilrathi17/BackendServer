@@ -265,6 +265,7 @@ export const posts = [
     firstName: "Jessica",
     lastName: "Dunn",
     location: "Washington, DC",
+    
     description:
       "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post6.jpeg",

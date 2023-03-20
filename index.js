@@ -14,8 +14,9 @@ import postRoutes from "./routes/posts.js"
 import {register} from "./controllers/auth.js"
 import {createPost} from "./controllers/posts.js"
 import { verifytoken } from "./middleware/auth.js";
-
-
+import User from "./models/user.js"
+import Post from "./models/posts.js"
+import {users,posts} from "./data/index.js"
 
 // CONFIGURATIONS
 
@@ -65,5 +66,8 @@ app.use("/posts",postRoutes)
  })
  .then(()=>{
     app.listen(PORT,()=>console.log(`server port ${PORT}`));
+    // User.insertMany(users);
+    // Post.insertMany(posts)
+
  })
  .catch((error)=>console.log(`${error} did not connect`))
