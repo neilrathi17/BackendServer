@@ -5,10 +5,10 @@ import{
     addRemoveFriend,
 } from "../controllers/users.js";
 
-import { verifytoken } from './../middleware/auth';
+import { verifytoken } from './../middleware/auth.js';
 
 
-const rounter=express.Router();
+const router=express.Router();
 
 //-------------READ----------------
 router.get("/:id",verifytoken,getUser);

@@ -9,9 +9,9 @@ const router =express.Router();
 //---------------------READ_------------
 
 router.get("/",verifytoken,getFeedPosts);
-router.get("/:user/posts",verifyToken,getUserPosts)
+router.get("/:user/posts",verifytoken,getUserPosts)
 
 //----------------------UPDATE---------------
-router.patch(":id/like",verifytoken,likepost);
+router.patch(":id/like",verifytoken,likePost);
 
 export default router;
